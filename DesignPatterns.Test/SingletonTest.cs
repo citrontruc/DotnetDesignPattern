@@ -1,5 +1,5 @@
 ﻿/*
-Test tp evaluate the behaviour of Singletons.
+Test to evaluate the behaviour of Singletons.
 */
 
 using System.Collections.Concurrent;
