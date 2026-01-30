@@ -1,5 +1,6 @@
 /*
 A class to implement the singleton pattern. We are using a logger in this case.
+Creational pattern.
 */
 
 namespace DesignPattern;
