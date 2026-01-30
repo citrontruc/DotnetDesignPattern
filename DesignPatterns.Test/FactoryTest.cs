@@ -14,8 +14,8 @@ public class FactoryTest
         // Arrange
         int valuePrice = 10;
         int valueDiscount = 10;
-        DiscountFactory discountFactory = new ValueBasedDiscountFactory(valueDiscount);
-        DiscountService discountService = discountFactory.CreateDiscountService();
+        IDiscountFactory discountFactory = new ValueBasedDiscountFactory(valueDiscount);
+        IDiscountService discountService = discountFactory.CreateDiscountService();
 
         // Act
         int valueAfterDiscount = discountService.ApplyDiscount(valuePrice);
@@ -30,8 +30,8 @@ public class FactoryTest
         // Arrange
         int valuePrice = 10;
         int valueDiscount = 10;
-        DiscountFactory discountFactory = new PercentBasedDiscountFactory(valueDiscount);
-        DiscountService discountService = discountFactory.CreateDiscountService();
+        IDiscountFactory discountFactory = new PercentBasedDiscountFactory(valueDiscount);
+        IDiscountService discountService = discountFactory.CreateDiscountService();
 
         // Act
         int valueAfterDiscount = discountService.ApplyDiscount(valuePrice);

@@ -12,12 +12,12 @@ public enum DiscountType
     Value,
 }
 
-public abstract class DiscountService
+public interface IDiscountService
 {
-    public abstract int ApplyDiscount(int value);
+    public int ApplyDiscount(int value);
 }
 
-public class ValueBasedDiscountService : DiscountService
+public class ValueBasedDiscountService : IDiscountService
 {
     protected int _discountValue;
 
@@ -26,13 +26,13 @@ public class ValueBasedDiscountService : DiscountService
         _discountValue = discountValue;
     }
 
-    public override int ApplyDiscount(int value)
+    public int ApplyDiscount(int value)
     {
         return Math.Max(0, value - _discountValue);
     }
 }
 
-public class PercentBasedDiscountService : DiscountService
+public class PercentBasedDiscountService : IDiscountService
 {
     protected int _discountValue;
 
@@ -41,19 +41,19 @@ public class PercentBasedDiscountService : DiscountService
         _discountValue = discountValue;
     }
 
-    public override int ApplyDiscount(int value)
+    public int ApplyDiscount(int value)
     {
         value *= (100 - _discountValue) / 100;
         return value;
     }
 }
 
-public abstract class DiscountFactory
+public interface IDiscountFactory
 {
-    public abstract DiscountService CreateDiscountService();
+    public IDiscountService CreateDiscountService();
 }
 
-public class ValueBasedDiscountFactory : DiscountFactory
+public class ValueBasedDiscountFactory : IDiscountFactory
 {
     private readonly int _value;
 
@@ -62,13 +62,13 @@ public class ValueBasedDiscountFactory : DiscountFactory
         _value = value;
     }
 
-    public override DiscountService CreateDiscountService()
+    public IDiscountService CreateDiscountService()
     {
         return new ValueBasedDiscountService(_value);
     }
 }
 
-public class PercentBasedDiscountFactory : DiscountFactory
+public class PercentBasedDiscountFactory : IDiscountFactory
 {
     private readonly int _value;
 
@@ -77,7 +77,7 @@ public class PercentBasedDiscountFactory : DiscountFactory
         _value = value;
     }
 
-    public override DiscountService CreateDiscountService()
+    public IDiscountService CreateDiscountService()
     {
         return new PercentBasedDiscountService(_value);
     }
