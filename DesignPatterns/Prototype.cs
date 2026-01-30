@@ -3,6 +3,8 @@ Essentially, it lets you create objects can copy themselves.
 Shallow copies copy all the value type elements but share the reference types elements.
 Imagine I have an object with an int property and a list property.
 If I do a shallow copy and modify the int, it will be modified for one of the instances but if I modify the list, it will be modified for both instances.
+
+Can be useful when you have a limited number of states. You clone a document and do modifications.
 */
 using Newtonsoft.Json;
 
