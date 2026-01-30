@@ -4,11 +4,15 @@ Shallow copies copy all the value type elements but share the reference types el
 Imagine I have an object with an int property and a list property.
 If I do a shallow copy and modify the int, it will be modified for one of the instances but if I modify the list, it will be modified for both instances.
 */
-using System.Runtime.Serialization;
-using System.Runtime.Serialization.Formatters.Binary;
 using Newtonsoft.Json;
 
 namespace DesignPattern;
+
+public enum EngineTypes
+{
+    Plane,
+    Car,
+}
 
 public interface VehiclePrototype
 {
@@ -45,11 +49,13 @@ public class Car : VehiclePrototype
 {
     public string Brand;
     public int MaxSpeed;
+    public Engine Engine;
 
-    public Car(string brandName, int maxSpeed)
+    public Car(string brandName, int maxSpeed, Engine engine)
     {
         Brand = brandName;
         MaxSpeed = maxSpeed;
+        Engine = engine;
     }
 
     public VehiclePrototype ShallowCopy()
@@ -60,7 +66,22 @@ public class Car : VehiclePrototype
 
     public VehiclePrototype DeepCopy()
     {
-        Car newCar = new(Brand, MaxSpeed);
+        Car newCar = new(Brand, MaxSpeed, Engine.Clone());
         return newCar;
+    }
+}
+
+public class Engine
+{
+    public EngineTypes EngineType;
+
+    public Engine(EngineTypes engineType)
+    {
+        EngineType = engineType;
+    }
+
+    public Engine Clone()
+    {
+        return (Engine)MemberwiseClone();
     }
 }

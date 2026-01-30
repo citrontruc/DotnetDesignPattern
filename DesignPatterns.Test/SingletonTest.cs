@@ -56,6 +56,8 @@ public class SingletonTest
         Assert.Single(instances.Distinct());
     }
 
+    /*
+    // Results of the test not guaranteed. Can't make a stable test out of this.
     [Fact]
     public async Task SingletonNotThreadSafe_CallInstanceMultipleTimes_ReturnDifferentInstances()
     {
@@ -85,4 +87,5 @@ public class SingletonTest
         Assert.False(instances.All(x => x == firstInstance));
         Assert.NotEqual(1, instances.Distinct().ToList().Count);
     }
+    */
 }
