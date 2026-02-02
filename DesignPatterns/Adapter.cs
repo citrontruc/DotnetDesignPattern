@@ -3,6 +3,8 @@ Adapter pattern is a structural pattern.
 Risk is of information being lost.
 */
 
+namespace DesignPattern;
+
 /// <summary>
 /// Using classes is with the IBook interface is maybe the best way to do things.
 /// </summary>

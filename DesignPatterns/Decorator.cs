@@ -2,6 +2,8 @@
 Wrap around a class in order to add additional functionalities.
 */
 
+namespace DesignPattern;
+
 public interface ICoffee
 {
     public bool Drink(int volumeToDrink);

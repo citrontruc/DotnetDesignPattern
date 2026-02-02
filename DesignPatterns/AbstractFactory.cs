@@ -3,6 +3,8 @@ A class to create abstract factories.
 Abstract factories create a family of objects (when family needs to be created together).
 */
 
+namespace DesignPattern;
+
 public class DarkWebsiteFactor : IWebsiteAbstractFactory
 {
     public IButton CreateButton()
