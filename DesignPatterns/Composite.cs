@@ -1,6 +1,6 @@
 /*
 A structural pattern to compose for items in a tree structure.
-Leaf elements must implement the same interface as container elements.
+Leaf elements must implement the same interface as container elements. ==> Must keep interface simple.
 */
 
 public interface IProduct
