@@ -1,4 +1,5 @@
 /*
+Structural pattern.
 Wrap around a class in order to add additional functionalities.
 */
 
