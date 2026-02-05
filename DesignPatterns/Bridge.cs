@@ -3,6 +3,8 @@ Bridge pattern: you let a central package compute the results.
 You just bring him all the information so he can do it.
 */
 
+namespace BridgePattern;
+
 public interface IBillingService
 {
     public int ComputePrice();
