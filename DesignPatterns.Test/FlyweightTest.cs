@@ -8,9 +8,10 @@ public class FlyweightTest
     public void Flyweight_isAskedToCreateMultipleInstancesOfTexture_ReturnsSameTexture()
     {
         // Arrange
-        Dictionary<EnemyTypes, string> enemyTextureDirectory = new() {
-            {EnemyTypes.Bat , ""},
-            {EnemyTypes.Zombie , ""},
+        Dictionary<EnemyTypes, string> enemyTextureDirectory = new()
+        {
+            { EnemyTypes.Bat, "" },
+            { EnemyTypes.Zombie, "" },
         };
 
         EnnemyFactory ennemyFactory = new(enemyTextureDirectory);
