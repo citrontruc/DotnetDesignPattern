@@ -16,6 +16,7 @@ public interface ICommand
 
 /// <summary>
 /// The Command should know to who it sends the command.
+/// It is the state of the command.
 /// </summary>
 public class SwitchOnCommand : ICommand
 {
@@ -29,6 +30,11 @@ public class SwitchOnCommand : ICommand
 public class RemoteControl
 {
     private ICommand _command;
+
+    public RemoteControl(ICommand command)
+    {
+        _command = command;
+    }
 
     public void SetCommand(ICommand command) => _command = command;
 
