@@ -38,3 +38,11 @@ public class Shop
         _payService.Pay(payValue);
     }
 }
+
+public class ShopWithInjection
+{
+    public void Pay(PayService payService, int payValue)
+    {
+        payService.Pay(payValue);
+    }
+}
