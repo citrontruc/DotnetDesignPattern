@@ -1,4 +1,5 @@
 /*
+Behavioral pattern.
 The template design pattern. Let's you implement an abstract class and lets you change the details.
 Could do something similar for LLMs.
 */
