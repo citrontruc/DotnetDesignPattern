@@ -2,6 +2,8 @@
 Flyweight: does not require object identity, for objects with a big number of elements that need to be mutualized because we have limited memory / process time.
 */
 
+namespace Flyweight;
+
 public enum EnemyTypes
 {
     Bat,
@@ -74,6 +76,11 @@ public class Ennemy
         PositionX = x;
         PositionY = y;
         Texture = texture;
+    }
+
+    public ITextureObject GetTexture()
+    {
+        return Texture;
     }
 
     public void Draw()
