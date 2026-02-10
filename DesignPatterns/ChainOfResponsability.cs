@@ -50,10 +50,7 @@ public class ExperienceEvaluator : IHandler<AbstractCandidate>
         {
             request.Accepted = false;
         }
-        if (_successor is not null)
-        {
-            _successor.Handle(request);
-        }
+        _successor?.Handle(request);
     }
 
     public void SetSuccessor(IHandler<AbstractCandidate> handler)
@@ -72,10 +69,7 @@ public class DataScienceSkillEvaluator : IHandler<AbstractCandidate>
         {
             request.Accepted = false;
         }
-        if (_successor is not null)
-        {
-            _successor.Handle(request);
-        }
+        _successor?.Handle(request);
     }
 
     public void SetSuccessor(IHandler<AbstractCandidate> handler)
