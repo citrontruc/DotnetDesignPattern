@@ -2,8 +2,6 @@
 Behavioral pattern. Chain of responsability.
 */
 
-using System.Data.Common;
-
 public enum Role
 {
     Manager,
