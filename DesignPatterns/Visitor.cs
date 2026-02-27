@@ -1,6 +1,6 @@
 /*
 Behavioral pattern.
-You have a visitor who has a standard method (Visit) that has different behaviours depending on the tyope of object it visits.
+You have a visitor who has a standard method (Visit) that has different behaviours depending on the type of object it visits.
 Lets you add a new method to a bunch of different code without having to add new code to them.
 
 Careful: making changes or adding a new element may ask you to change all of the visitors.

@@ -1,7 +1,7 @@
 /*
-A script to implement he builder pattern.
-Let's us create elements step by step.
-Let's us separate the creation of object from the object.
+A script to implement the builder pattern.
+Lets us create elements step by step.
+Lets us separate the creation of object from the object.
 */
 
 namespace DesignPattern;
