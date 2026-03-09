@@ -1,7 +1,12 @@
 /*
 Behavioral pattern.
-The template design pattern. Let's you implement an abstract class and lets you change the details.
+The template design pattern. It lets you implement an abstract class and lets you change the details.
 Could do something similar for LLMs.
+
+Hides complexity and turns a large system into something usable by a user.
+
+NOTE: you can have multiple facades on the same set of SubSystems.
+It is in fact recommended to do that in order to avoid that the facade becomes too big or a god object.
 */
 
 public abstract class RagSystem

@@ -3,6 +3,10 @@ Behavioral pattern.
 You have a visitor who has a standard method (Visit) that has different behaviours depending on the type of object it visits.
 Lets you add a new method to a bunch of different code without having to add new code to them.
 
+Also: the object in itself does not have to choose himself how the visitor should behave. You associate it to the class.
+It also helps decoupling responsability.
+Functions like "export funky format" should not belong in the object You shouldn't add code and risk breajking your application for this..
+
 Careful: making changes or adding a new element may ask you to change all of the visitors.
 */
 
